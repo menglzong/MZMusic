@@ -1,0 +1,6 @@
+module Pods_MZMusicPlayer {
+  umbrella header "Pods-MZMusicPlayer-umbrella.h"
+
+  export *
+  module * { export * }
+}

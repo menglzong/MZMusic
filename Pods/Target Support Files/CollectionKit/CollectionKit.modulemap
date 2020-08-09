@@ -1,0 +1,6 @@
+module CollectionKit {
+  umbrella header "CollectionKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
