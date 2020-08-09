@@ -9,6 +9,7 @@
 #import "MZHomeViewController.h"
 #import "MZHomeModel.h"
 #import "MZHomeTableViewCell.h"
+#import "MZHomeMoreCell.h"
 #import <AFNetworking/UIButton+AFNetworking.h>
 
 @interface MZHomeViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -67,6 +68,16 @@
     }
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    return !section ? nil : [[MZHomeMoreCell alloc] initWithTitle:[self.homeViewModel mainTitleForSection:section] hasMore:[self.homeViewModel hasMoreForSection:section] titleTag:section];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView *temp = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 10)];
+    temp.backgroundColor = [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1.0];
+    return temp;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 70;
 }
@@ -84,6 +95,7 @@
 - (UITableView *)tableView {
     if (_tableView == nil) {
         _tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+        _tableView.backgroundColor = [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1.0];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         [_tableView registerClass:[MZHomeTableViewCell class] forCellReuseIdentifier:@"cell"];

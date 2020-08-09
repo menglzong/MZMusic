@@ -16,6 +16,7 @@
 		874F483824DF95A800261172 /* DestinationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 874F483624DF95A800261172 /* DestinationModel.m */; };
 		874F483B24DF95B300261172 /* EditorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 874F483A24DF95B200261172 /* EditorModel.m */; };
 		874F483F24DF9E4300261172 /* MZHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 874F483E24DF9E4300261172 /* MZHomeTableViewCell.m */; };
+		874F484224DFA5EF00261172 /* MZHomeMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 874F484124DFA5EF00261172 /* MZHomeMoreCell.m */; };
 		87F4312324D699BA00A81025 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F4312224D699BA00A81025 /* AppDelegate.m */; };
 		87F4312624D699BA00A81025 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F4312524D699BA00A81025 /* SceneDelegate.m */; };
 		87F4312924D699BA00A81025 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F4312824D699BA00A81025 /* ViewController.m */; };
@@ -71,6 +72,8 @@
 		874F483A24DF95B200261172 /* EditorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorModel.m; sourceTree = "<group>"; };
 		874F483D24DF9E4300261172 /* MZHomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZHomeTableViewCell.h; sourceTree = "<group>"; };
 		874F483E24DF9E4300261172 /* MZHomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZHomeTableViewCell.m; sourceTree = "<group>"; };
+		874F484024DFA5EF00261172 /* MZHomeMoreCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZHomeMoreCell.h; sourceTree = "<group>"; };
+		874F484124DFA5EF00261172 /* MZHomeMoreCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZHomeMoreCell.m; sourceTree = "<group>"; };
 		87F4311E24D699BA00A81025 /* MZMusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MZMusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F4312124D699BA00A81025 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		87F4312224D699BA00A81025 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -243,6 +246,8 @@
 				874F482824DF934100261172 /* MZHomeModel.m */,
 				874F483D24DF9E4300261172 /* MZHomeTableViewCell.h */,
 				874F483E24DF9E4300261172 /* MZHomeTableViewCell.m */,
+				874F484024DFA5EF00261172 /* MZHomeMoreCell.h */,
+				874F484124DFA5EF00261172 /* MZHomeMoreCell.m */,
 			);
 			path = MZHome;
 			sourceTree = "<group>";
@@ -444,6 +449,7 @@
 				874F482924DF934100261172 /* MZHomeModel.m in Sources */,
 				87F4322624D6C50500A81025 /* MZHomeViewController.m in Sources */,
 				874F483B24DF95B300261172 /* EditorModel.m in Sources */,
+				874F484224DFA5EF00261172 /* MZHomeMoreCell.m in Sources */,
 				874F483224DF957C00261172 /* ContentCategoryModel.m in Sources */,
 				87F4322224D6C4B600A81025 /* MZTabBarController.m in Sources */,
 				87F4323024D6CF4E00A81025 /* MZHomeNetManager.m in Sources */,
