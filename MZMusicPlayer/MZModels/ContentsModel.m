@@ -10,10 +10,15 @@
 
 @implementation ContentsModel
 
++ (NSDictionary *)mj_objectClassInArray{
+    return @{@"tags" : [ContentTags class], @"focusImages" : [ContentFocusimages class], @"categoryContents" : [ContentCategorycontents class]};
+}
+
 @end
+
 @implementation ContentFocusimages
 
-+ (NSDictionary *)objectClassInArray{
++ (NSDictionary *)mj_objectClassInArray{
     return @{@"list" : [CFocusimages_List class]};
 }
 
@@ -27,7 +32,7 @@
 
 @implementation ContentTags
 
-+ (NSDictionary *)objectClassInArray{
++ (NSDictionary *)mj_objectClassInArray{
     return @{@"list" : [ContentTags_List class]};
 }
 
@@ -41,7 +46,7 @@
 
 @implementation ContentCategorycontents
 
-+ (NSDictionary *)objectClassInArray{
++ (NSDictionary *)mj_objectClassInArray{
     return @{@"list" : [CCategoryCotents_List class]};
 }
 
@@ -50,7 +55,7 @@
 
 @implementation CCategoryCotents_List
 
-+ (NSDictionary *)objectClassInArray{
++ (NSDictionary *)mj_objectClassInArray{
     return @{@"list" : [CCategoryCotents_L_List class]};
 }
 
@@ -59,7 +64,7 @@
 
 @implementation CCategoryCotents_L_List
 
-+ (NSDictionary *)objectClassInArray{
++ (NSDictionary *)mj_objectClassInArray{
     return @{@"firstKResults" : [CC_L_L_Firstkresults class]};
 }
 

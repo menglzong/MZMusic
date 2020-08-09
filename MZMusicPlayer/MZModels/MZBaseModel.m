@@ -8,9 +8,10 @@
 
 #import "MZBaseModel.h"
 
-
 @implementation MZBaseModel
+
 + (NSDictionary *)mj_replacedKeyFromPropertyName {
     return @{@"ID":@"id"};
 }
+
 @end

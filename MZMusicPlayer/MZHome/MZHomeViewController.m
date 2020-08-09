@@ -7,10 +7,14 @@
 //
 
 #import "MZHomeViewController.h"
+#import "MZHomeModel.h"
+#import "MZHomeTableViewCell.h"
+#import <AFNetworking/UIButton+AFNetworking.h>
 
 @interface MZHomeViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) MZHomeModel *homeViewModel;
 
 @end
 
@@ -20,47 +24,61 @@
     [super viewDidLoad];
     self.title = @"推荐";
     [self.view addSubview:self.tableView];
+    [self.homeViewModel getDataCompletionHandle:^(NSError * _Nonnull error) {
+        if (error == nil) {
+            [self.tableView reloadData];
+        }
+    }];
     // Do any additional setup after loading the view.
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 0;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.homeViewModel.sectionNumber;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.homeViewModel rowForSection:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [[UITableViewCell alloc] init];
+    if (indexPath.section == 0) {
+        static NSString *cellID = @"TCell101";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+        if (cell == nil){
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        }
+        
+        cell.imageView.image = [UIImage imageNamed:@"music_tuijian"];
+        cell.textLabel.text = [self.homeViewModel titleForIndexPath:indexPath];
+        cell.detailTextLabel.text = [self.homeViewModel subTitleForIndexPath:indexPath];
+        cell.detailTextLabel.font = [UIFont systemFontOfSize:14];
+        cell.detailTextLabel.textColor = [UIColor lightGrayColor];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+        return cell;
+    } else {
+        MZHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+        [cell.coverBtn setImageForState:UIControlStateNormal withURL:[self.homeViewModel coverURLForIndexPath:indexPath] placeholderImage:[UIImage imageNamed:@"find_albumcell_cover_bg"]];
+        cell.titleLb.text = [self.homeViewModel titleForIndexPath:indexPath];
+        cell.introLb.text = [self.homeViewModel subTitleForIndexPath:indexPath];
+        cell.playsLb.text = [self.homeViewModel playsForIndexPath:indexPath];
+        cell.tracksLb.text = [self.homeViewModel tracksForIndexPath:indexPath];
+        return cell;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 70;
 }
 
 // 组头高
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    
-    if (tableView.tag == 100) {
-        if (section == 0) {
-            return 40;
-        }else
-        return 0.0001;
-    }else if(tableView.tag == 101){
-         return !section ? 0: 35;
-    }else{
-        return 10;
-    }
+    return !section ? 0: 35;
 }
 
 // 组尾高
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    
-    if (tableView.tag == 100) {
-        return 0.0001;
-    }else if(tableView.tag == 101){
-        return 10;
-    }else{
-        return 10;
-    }
-    
+    return 10;
 }
 
 - (UITableView *)tableView {
@@ -68,8 +86,16 @@
         _tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        [_tableView registerClass:[MZHomeTableViewCell class] forCellReuseIdentifier:@"cell"];
     }
     return _tableView;
+}
+
+- (MZHomeModel *)homeViewModel {
+    if (_homeViewModel == nil) {
+        _homeViewModel = [[MZHomeModel alloc] initWithCategoryId:2 contentType:@"album"];
+    }
+    return _homeViewModel;
 }
 
 @end
