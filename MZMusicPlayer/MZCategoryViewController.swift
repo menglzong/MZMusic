@@ -46,6 +46,14 @@ extension MZCategoryViewController: UICollectionViewDelegate, UICollectionViewDa
         }
         return UICollectionViewCell()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let temp = array[indexPath.row]
+        let vc = MZCategoryDetailViewController()
+        vc.keyName = temp.0
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 fileprivate let array = [("电台", "music_transceiver"), ("歌单", "music_song"), ("新歌", "music_new"), ("翻唱", "music_fan"), ("原创", "music_original"),("明星", "music_star"), ("民谣", "music_literature"), ("纯音乐", "music_lingsheng"), ("古风", "music_gufeng"), ("古典", "music_classical"), ("电子", "music_dianzi"), ("ACG", "music_acg"), ("影视", "music_movie"), ("老歌", "music_lao"), ("文艺", "music_wenyi"), ("睡前", "music_sleep"), ("铃声", "music_lingsheng"), ("榜单", "music_dan")]

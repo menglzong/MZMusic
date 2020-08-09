@@ -11,10 +11,11 @@
 @implementation EditorModel
 
 
-+ (NSDictionary *)objectClassInArray{
++ (NSDictionary *)mj_objectClassInArray {
     return @{@"list" : [EditorList class]};
 }
 @end
+
 @implementation EditorList
 
 @end

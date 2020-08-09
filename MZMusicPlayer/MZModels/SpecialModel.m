@@ -9,7 +9,7 @@
 #import "SpecialModel.h"
 
 @implementation SpecialModel
-+ (NSDictionary *)objectClassInArray{
++ (NSDictionary *)mj_objectClassInArray{
     return @{@"list" : [SpecialMoreList class]};
 }
 @end

@@ -11,7 +11,7 @@
 @implementation ContentCategoryModel
 
 
-+ (NSDictionary *)objectClassInArray{
++ (NSDictionary *)mj_objectClassInArray{
     return @{@"list" : [CategoryList class]};
 }
 @end

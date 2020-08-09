@@ -18,7 +18,7 @@
 
 @implementation DTracks
 
-+ (NSDictionary *)objectClassInArray{
++ (NSDictionary *)mj_objectClassInArray{
     return @{@"list" : [DTracks_List class]};
 }
 

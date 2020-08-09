@@ -19,6 +19,8 @@
 		874F484224DFA5EF00261172 /* MZHomeMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 874F484124DFA5EF00261172 /* MZHomeMoreCell.m */; };
 		874F484424DFDD7000261172 /* MZCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874F484324DFDD7000261172 /* MZCategoryViewController.swift */; };
 		874F484624DFE81900261172 /* MZCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874F484524DFE81900261172 /* MZCategoryCell.swift */; };
+		874F484924DFECBC00261172 /* MZCategoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 874F484824DFECBC00261172 /* MZCategoryDetailViewController.m */; };
+		874F484C24DFECF100261172 /* MZCategoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 874F484B24DFECF100261172 /* MZCategoryViewModel.m */; };
 		87F4312324D699BA00A81025 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F4312224D699BA00A81025 /* AppDelegate.m */; };
 		87F4312624D699BA00A81025 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F4312524D699BA00A81025 /* SceneDelegate.m */; };
 		87F4312924D699BA00A81025 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F4312824D699BA00A81025 /* ViewController.m */; };
@@ -78,6 +80,10 @@
 		874F484124DFA5EF00261172 /* MZHomeMoreCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZHomeMoreCell.m; sourceTree = "<group>"; };
 		874F484324DFDD7000261172 /* MZCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MZCategoryViewController.swift; sourceTree = "<group>"; };
 		874F484524DFE81900261172 /* MZCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MZCategoryCell.swift; sourceTree = "<group>"; };
+		874F484724DFECBC00261172 /* MZCategoryDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZCategoryDetailViewController.h; sourceTree = "<group>"; };
+		874F484824DFECBC00261172 /* MZCategoryDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZCategoryDetailViewController.m; sourceTree = "<group>"; };
+		874F484A24DFECF100261172 /* MZCategoryViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZCategoryViewModel.h; sourceTree = "<group>"; };
+		874F484B24DFECF100261172 /* MZCategoryViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZCategoryViewModel.m; sourceTree = "<group>"; };
 		87F4311E24D699BA00A81025 /* MZMusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MZMusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F4312124D699BA00A81025 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		87F4312224D699BA00A81025 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -197,6 +203,10 @@
 				87F4322924D6C95C00A81025 /* MZMineViewController.swift */,
 				874F484324DFDD7000261172 /* MZCategoryViewController.swift */,
 				874F484524DFE81900261172 /* MZCategoryCell.swift */,
+				874F484724DFECBC00261172 /* MZCategoryDetailViewController.h */,
+				874F484824DFECBC00261172 /* MZCategoryDetailViewController.m */,
+				874F484A24DFECF100261172 /* MZCategoryViewModel.h */,
+				874F484B24DFECF100261172 /* MZCategoryViewModel.m */,
 				874F483C24DF95CC00261172 /* MZModels */,
 				87F4322724D6C51000A81025 /* MZHome */,
 				87F4322324D6C4C500A81025 /* MZTabBar */,
@@ -455,12 +465,14 @@
 				87F4322A24D6C95C00A81025 /* MZMineViewController.swift in Sources */,
 				874F482924DF934100261172 /* MZHomeModel.m in Sources */,
 				87F4322624D6C50500A81025 /* MZHomeViewController.m in Sources */,
+				874F484924DFECBC00261172 /* MZCategoryDetailViewController.m in Sources */,
 				874F484424DFDD7000261172 /* MZCategoryViewController.swift in Sources */,
 				874F483B24DF95B300261172 /* EditorModel.m in Sources */,
 				874F484224DFA5EF00261172 /* MZHomeMoreCell.m in Sources */,
 				874F483224DF957C00261172 /* ContentCategoryModel.m in Sources */,
 				87F4322224D6C4B600A81025 /* MZTabBarController.m in Sources */,
 				87F4323024D6CF4E00A81025 /* MZHomeNetManager.m in Sources */,
+				874F484C24DFECF100261172 /* MZCategoryViewModel.m in Sources */,
 				874F483F24DF9E4300261172 /* MZHomeTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
