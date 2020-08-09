@@ -23,7 +23,7 @@
     MZHomeViewController *item = [[MZHomeViewController alloc]init];
        [self controller:item title:@"推荐" image:@"icon_tab_shouye_normal" selectedimage:@"icon_tab_shouye_highlight"];
     
-    MZHomeViewController *item0 = [[MZHomeViewController alloc]init];
+    MZCategoryViewController *item0 = [[MZCategoryViewController alloc]init];
     [self controller:item0 title:@"分类" image:@"tab_icon_selection_normal" selectedimage:@"tab_icon_selection_highlight"];
         
     MZMineViewController *item2 = [[MZMineViewController alloc]init];

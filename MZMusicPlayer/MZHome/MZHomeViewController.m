@@ -68,7 +68,7 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    return !section ? nil : [[MZHomeMoreCell alloc] initWithTitle:[self.homeViewModel mainTitleForSection:section] hasMore:[self.homeViewModel hasMoreForSection:section] titleTag:section];
+    return !section ? nil : [[MZHomeMoreCell alloc] initWithTitle:[self.homeViewModel mainTitleForSection:section] hasMore:NO titleTag:section];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
@@ -89,6 +89,10 @@
 // 组尾高
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 10;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
 }
 
 - (UITableView *)tableView {

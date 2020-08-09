@@ -12,7 +12,7 @@ class MZMineViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "我的"
         // Do any additional setup after loading the view.
     }
     

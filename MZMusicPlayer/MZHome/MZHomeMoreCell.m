@@ -25,12 +25,8 @@
     if (self = [super init]) {
         self.title = title;
         self.arrowIV.image = [UIImage imageNamed:@"tabbar_np_play"];
-        self.arrowV.image = [UIImage imageNamed:@"xm_accessory"];
         self.tag = titleTag;
         [self.titleLb setTextColor:[UIColor blackColor]];
-        if (more) {
-            [self.moreBtn setTitle:@"更多 " forState:UIControlStateNormal];
-        }
         self.backgroundColor = [UIColor whiteColor];
     }
     return self;

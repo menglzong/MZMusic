@@ -11,6 +11,5 @@ target 'MZMusicPlayer' do
     pod 'SDWebImage'
     pod 'MJRefresh'
     pod 'Masonry'
-    pod 'CollectionKit'
     pod 'WebViewJavascriptBridge'
 end
