@@ -12,6 +12,7 @@
 #import <MJRefresh/MJRefresh.h>
 #import <Masonry/Masonry.h>
 #import <UIButton+AFNetworking.h>
+#import "MZDetailListViewController.h"
 
 @interface MZCategoryDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -90,12 +91,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
     // 从本控制器VM获取头标题, 以及分类ID回初始化
-//    FYSongViewController *vc = [[FYSongViewController alloc] initWithAlbumId:[self.categoryVM albumIdForRow:indexPath.row] title:[self.categoryVM titleForRow:indexPath.row]];
-//
-//    self.hidesBottomBarWhenPushed = NO;
-//    [self.navigationController pushViewController:vc animated:YES];
+    MZDetailListViewController *vc = [[MZDetailListViewController alloc] initWithAlbumId:[self.categoryVM albumIdForRow:indexPath.row] title:[self.categoryVM titleForRow:indexPath.row]];
+
+    self.hidesBottomBarWhenPushed = NO;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - VM,tableView懒加载
@@ -118,6 +118,7 @@
         _tableView.delegate = self;
         [_tableView registerClass:[MZHomeTableViewCell class] forCellReuseIdentifier:@"MCCell"];
         _tableView.rowHeight = 70;
+        _tableView.tableFooterView = [UIView new];
     }
     return _tableView;
 }

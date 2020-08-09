@@ -10,6 +10,8 @@
 #import "MZHomeModel.h"
 #import "MZHomeTableViewCell.h"
 #import "MZHomeMoreCell.h"
+#import "MZCategoryDetailViewController.h"
+#import "MZDetailListViewController.h"
 #import <AFNetworking/UIButton+AFNetworking.h>
 
 @interface MZHomeViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -92,7 +94,14 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    if (indexPath.section == 0) {
+        MZCategoryDetailViewController *vc = [[MZCategoryDetailViewController alloc] init];
+        vc.keyName = @"榜单";
+        [self.navigationController pushViewController:vc animated:YES];
+    } else {
+        MZDetailListViewController *vc = [[MZDetailListViewController alloc] initWithAlbumId:[self.homeViewModel albumIdForIndexPath:indexPath] title:[self.homeViewModel titleForIndexPath:indexPath]];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (UITableView *)tableView {
