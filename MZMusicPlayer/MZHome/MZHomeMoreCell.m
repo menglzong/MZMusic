@@ -54,8 +54,8 @@
         _arrowV = [[UIImageView alloc] init];
         [self addSubview:_arrowV];
         [_arrowV mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.mas_equalTo(-4);
-            make.bottom.mas_equalTo(-12);
+            make.right.mas_equalTo(-18);
+            make.bottom.mas_equalTo(-10);
             make.size.mas_equalTo(CGSizeMake(10, 15));
         }];
     }
@@ -67,8 +67,8 @@
         _arrowIV = [[UIImageView alloc] init];
         [self addSubview:_arrowIV];
         [_arrowIV mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(8);
-            make.bottom.mas_equalTo(-12);
+            make.left.mas_equalTo(10);
+            make.bottom.mas_equalTo(-10);
             make.size.mas_equalTo(CGSizeMake(12, 15));
         }];
     }

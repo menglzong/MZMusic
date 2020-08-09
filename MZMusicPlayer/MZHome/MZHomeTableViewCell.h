@@ -18,8 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) UILabel *introLb;
 // 播放次数
 @property (nonatomic,strong) UILabel *playsLb;
-// 集数
-@property (nonatomic,strong) UILabel *tracksLb;
 
 @end
 

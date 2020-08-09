@@ -25,11 +25,11 @@
         
         // 分割线缩短
         self.separatorInset = UIEdgeInsetsMake(0, 70, 0, 0);
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
 }
 
-@synthesize tracksLb = _tracksLb;
 @synthesize playsLb = _playsLb;
 
 #pragma mark - Cell属性懒加载
@@ -90,50 +90,16 @@
     if (!_playsLb) {
         _playsLb = [UILabel new];
         [self.contentView addSubview:_playsLb];
-        self.IV = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"find_albumcell_play"]];
-        [self.contentView addSubview:self.IV];
-        [self.IV mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(10, 10));
-            make.left.mas_equalTo(self.titleLb);
-            make.bottom.mas_equalTo(-10);
-        }];
-        
-        [self.contentView addSubview:_playsLb];
         [_playsLb mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.mas_equalTo(self.IV);
-            make.left.mas_equalTo(self.IV.mas_right).mas_equalTo(2);
+            make.bottom.mas_equalTo(-8);
+            make.left.mas_equalTo(self.titleLb.mas_left);
+            make.width.mas_lessThanOrEqualTo(100);
             make.width.mas_lessThanOrEqualTo(100);
         }];
         _playsLb.textColor = [UIColor lightGrayColor];
         _playsLb.font = [UIFont systemFontOfSize:11];
     }
     return _playsLb;
-}
-
-// 集数
-- (UILabel *)tracksLb {
-    if (!_tracksLb) {
-        _tracksLb = [UILabel new];
-        [self.contentView addSubview:_tracksLb];
-        self.UIV = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"find_hotUser_sounds"]];
-        [self.contentView addSubview:self.UIV];
-        [self.UIV mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(10, 10));
-            make.left.mas_equalTo(self.playsLb.mas_right).mas_equalTo(20);
-            make.bottom.mas_equalTo(-10);
-        }];
-        
-        [self.contentView addSubview:_tracksLb];
-        [_tracksLb mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.mas_equalTo(self.UIV);
-            make.left.mas_equalTo(self.UIV.mas_right).mas_equalTo(2);
-            make.width.mas_lessThanOrEqualTo(100);
-        }];
-        _tracksLb.textColor = [UIColor lightGrayColor];
-        _tracksLb.font = [UIFont systemFontOfSize:11];
-   
-    }
-    return _tracksLb;
 }
 
 @end

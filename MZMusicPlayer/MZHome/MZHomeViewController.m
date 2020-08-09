@@ -55,7 +55,7 @@
         cell.detailTextLabel.font = [UIFont systemFontOfSize:14];
         cell.detailTextLabel.textColor = [UIColor lightGrayColor];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     } else {
         MZHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
@@ -63,7 +63,6 @@
         cell.titleLb.text = [self.homeViewModel titleForIndexPath:indexPath];
         cell.introLb.text = [self.homeViewModel subTitleForIndexPath:indexPath];
         cell.playsLb.text = [self.homeViewModel playsForIndexPath:indexPath];
-        cell.tracksLb.text = [self.homeViewModel tracksForIndexPath:indexPath];
         return cell;
     }
 }
